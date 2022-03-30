@@ -26,19 +26,18 @@ const checkForNetflixSkipBtn = async (b) => {
 				checkForNetflixSkipBtn(b.childNodes[i]);
 			}
 		}
+
+		await new Promise((r) => setTimeout(r, 1000));
 		console.log(end);
 		if (end) {
 			return true;
 		}
-
-		await new Promise((r) => setTimeout(r, 1000));
 		checkForNetflixSkipBtn(b);
 	} else {
+		await new Promise((r) => setTimeout(r, 1000));
 		if (end) {
 			return true;
 		}
-
-		await new Promise((r) => setTimeout(r, 1000));
 		checkForNetflixSkipBtn(b);
 	}
 	return true;
